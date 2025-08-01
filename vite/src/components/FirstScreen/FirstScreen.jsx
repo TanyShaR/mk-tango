@@ -1,12 +1,12 @@
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import S from "./FirstScreen.module.css";
-import { AppContext } from "../../lib/AppContext";
+import { showModal } from "../../store/features/subscribe";
 
 export function FirstScreen() {
-  const { setShowSubscribeModal } = useContext(AppContext);
+  const dispatch = useDispatch();
 
   const onSubscribe = () => {
-    setShowSubscribeModal(true);
+    dispatch(showModal());
   };
   return (
     <main className={S.container}>

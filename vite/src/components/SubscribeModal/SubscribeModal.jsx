@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { AppContext } from "../../lib/AppContext";
+import { useSelector } from "react-redux";
 import { Modal } from "../Modal/Modal";
+import { selectModalShow } from "../../store/features/subscribe";
 
 export function SubscribeModal() {
-    const { showSubscribeModal } = useContext(AppContext);
-    return <Modal show={showSubscribeModal}>Спасибо за регистрацию!</Modal>;
+  const show = useSelector(selectModalShow);
+  return <Modal show={show}>Спасибо за регистрацию!</Modal>;
 }
