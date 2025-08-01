@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { AppContext } from "./lib/AppContext";
+import { Provider } from "react-redux";
+import { store } from "../../store";
+import { AppContext } from "../../lib/AppContext";
 
 export function AppProvider({ children }) {
   const [showSubscribeModal, setShowSubscribeModal] = useState(false);
@@ -7,5 +9,9 @@ export function AppProvider({ children }) {
     showSubscribeModal,
     setShowSubscribeModal,
   };
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return (
+  <Provider store={store}>
+    <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  </Provider>  
+  );
 }

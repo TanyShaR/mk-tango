@@ -1,4 +1,5 @@
 import "./App.css";
+import { AppProvider } from "./components/AppProvider/AppProvider";
 import { FirstScreen } from "./components/FirstScreen/FirstScreen";
 import { SubscribeModal } from "./components/SubscribeModal/SubscribeModal";
 
